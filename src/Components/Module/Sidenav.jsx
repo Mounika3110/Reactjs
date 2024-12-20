@@ -1,18 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Sidenav() {
   return (
     <div className='side'>
-    <ul>
-      <Link to={'/tv'}>TV</Link><br/>
-      <Link to={'/headphone'}>Headphones</Link><br/>
-      <Link to={'/speakers'}>Speaker</Link><br/>
-    </ul>
-  </div>
-  )
+      <ul>
+        <li><Link to={'/tv'}>TV</Link></li>
+        <li><Link to={'/headphone'}>Headphones</Link></li>
+        <li><Link to={'/speakers'}>Speakers</Link></li>
+      </ul>
+    </div>
+    
+  );
+  
 }
-export default Sidenav
-
-
-
+export default Sidenav;

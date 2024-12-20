@@ -21,13 +21,15 @@ function Dashboard() {
             {
               display.map((e)=>{
                 return(
+                   <Link to={`/tvdetails/${e.id}`} className="text-decoration-none">
                   <div className=" xyz">
+
             <img src={e.image} style={{width:'250px'}} /><br/>
               <strong>Brand:</strong>{e.brand}<br/>
                 <strong>Display:</strong> {e.Display} <br />
                 <strong>Screen Size:</strong> {e.screensize} inches <br />
                 <strong>Dimensions:</strong> {e.Dimensions}
-          </div>
+          </div></Link>
                 )
               })
             }
@@ -43,11 +45,12 @@ function Dashboard() {
                 {
                   hphone.map((h)=>{
                     return(
+                          <Link to={`/headdetails/${h.id}`} className="text-decoration-none">
                       <div className="qwe">
                         <img src={h.image} style={{width:'150px' }} /><br/>
-                        <strong>Brand:</strong>{h.Brand}<br/>
+                        <strong>Brand:</strong>{h.brand}<br/>
                         <strong>Price:</strong> {h.Price}<br/>
-                        </div>
+                        </div></Link>
                     )
                   })
                 }
@@ -60,11 +63,13 @@ function Dashboard() {
                 {
                   hphones.map((h)=>{
                     return(
+                      <Link to={`/headdetails/${h.id}`} className="text-decoration-none">
+
                       <div className="qwe">
                         <img src={h.image} style={{width:'150px' }} /><br/>
-                        <strong>Brand:</strong>{h.Brand}<br/>
+                        <strong>Brand:</strong>{h.brand}<br/>
                         <strong>Price:</strong> {h.Price}<br/>
-                        </div>
+                        </div></Link>
                     )
                   })
                 }
@@ -76,11 +81,13 @@ function Dashboard() {
                 {
                   hphoness.map((h)=>{
                     return(
+                      <Link to={`/headdetails/${h.id}`} className="text-decoration-none">
+
                       <div className="qwe">
                         <img src={h.image} style={{width:'150px' }} /><br/>
-                        <strong>Brand:</strong>{h.Brand}<br/>
+                        <strong>Brand:</strong>{h.brand}<br/>
                         <strong>Price:</strong> {h.Price}<br/>
-                        </div>
+                        </div></Link>
                     )
                   })
                 }
@@ -96,12 +103,14 @@ function Dashboard() {
             {
               speaker.map((s)=>{
                 return(
+                                <Link to={`/speakdetails/${s.id}`} className="text-decoration-none">
+                
                   <div className=" plm">
             <img src={s.image} style={{width:'150px'}} /><br/>
               <strong>Brand:</strong>{s.Brand}<br/>
                 <strong>Model :</strong> {s.Model} inches <br />
                 <strong>Price:</strong> {s.Price}<br/>
-          </div>
+          </div></Link>
                 )
               })
             }

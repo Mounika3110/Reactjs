@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
-import { product2Datas } from '../Data/Product2';
+import { product2Datas } from '../Data/Product2'; // Import your data
 import Sidenav from './Sidenav';
 import Phonenav from './Phonenav';
 import { Link } from 'react-router-dom';
 
 function Headphones() {
-  const [selectedBrand, setSelectedBrand] = useState('All');
+  const [selectedBrand, setSelectedBrand] = useState('All'); // Initial state is 'All'
 
+  // Filter products based on selected brand
   const filteredProducts = selectedBrand === 'All' 
     ? product2Datas 
-    : product2Datas.filter((product) => product.Brand === selectedBrand);
+    : product2Datas.filter((product) => product.brand === selectedBrand);
 
   return (
     <Row>
@@ -18,15 +19,15 @@ function Headphones() {
         <Sidenav />
       </Col>
       <Col sm={10}>
-        <Phonenav setSelectedBrand={setSelectedBrand} /> 
+        <Phonenav setSelectedBrand={setSelectedBrand} /> {/* Pass the setSelectedBrand function */}
         <div className='tv'>
           {filteredProducts.map((h) => (
             <Col key={h.id}> 
               <Link to={`/headdetails/${h.id}`} className="text-decoration-none">
                 <Card className="card">
                   <Card.Body>
-                    <img src={h.image} alt={h.Brand} style={{ width: '200px', height: '150px' }} />
-                    <Card.Title>{h.Brand}</Card.Title>
+                    <img src={h.image} alt={h.brand} style={{ width: '200px', height: '150px' }} />
+                    <Card.Title>{h.brand}</Card.Title>
                     <Card.Text>
                       <strong>Model:</strong> {h.Model} <br />
                       <strong>Frequency:</strong> {h.Frequency} <br />
