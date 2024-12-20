@@ -28,7 +28,12 @@ function Headernav({ setSelectedBrand }) {
             ))}
           </Nav>
           <Nav>
-            <Link to='/dashboard'><p>Back</p></Link>
+            <div className='d-flex gap-2'>
+            <Link to='/dashboard'><p>Back</p></Link> 
+            <div className='logout'>
+<button type="button" class="btn btn-outline-primary" ><Link to={'/'}>Logout</Link></button>
+      </div>
+      </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -37,3 +42,4 @@ function Headernav({ setSelectedBrand }) {
 }
 
 export default Headernav;
+ 
