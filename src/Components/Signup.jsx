@@ -32,7 +32,11 @@ function Signup() {
             />
           </div>
           <div className='form-action'>
+<<<<<<< HEAD
             <Link to={"/Reactwork"}>
+=======
+            <Link to={"/"}>
+>>>>>>> c3747f4d38444127e3b2045a9f77de9216d60bf7
               <button type="submit" className="btn btn-primary w-100">Signup</button>
             </Link>
           </div>
