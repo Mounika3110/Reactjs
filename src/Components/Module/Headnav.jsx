@@ -31,7 +31,7 @@ function Headernav({ setSelectedBrand }) {
             <div className='d-flex gap-2'>
             <Link to='/dashboard'><p>Back</p></Link> 
             <div className='logout'>
-<button type="button" class="btn btn-outline-primary" ><Link to={'/'}>Logout</Link></button>
+<button type="button" class="btn btn-outline-primary" ><Link to={'/Reactwork'}>Logout</Link></button>
       </div>
       </div>
           </Nav>
