@@ -20,7 +20,7 @@ function App() {
       <CartProvider>
         <Router>
           <Routes>
-            <Route path="/Reactwork" element={<Login />} />
+            <Route path="/Reactjs" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/forgetpassword" element={<ForgetPassword />} />
