@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
-import { useCart } from './Cartcontext';
+import { useCart } from './Cartcontext'; 
 
 function CartPage() {
   const { cartItems, removeFromCart, updateQuantity } = useCart(); 
@@ -20,6 +19,8 @@ function CartPage() {
     }
   };
 
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.Price * item.quantity, 0);
+
   return (
     <div>
       <Row>
@@ -33,7 +34,7 @@ function CartPage() {
                 <div>
                   <img src={item.image} alt={item.brand} style={{ width: "100px" }} />
                   <p>{item.brand}</p>
-                  <p>{item.Price}</p>
+                  <p>${item.Price.toFixed(2)}</p> 
                   <p>Quantity: {item.quantity}</p>
                 </div>
                 <div>
@@ -48,6 +49,15 @@ function CartPage() {
           )}
         </Col>
       </Row>
+
+      {cartItems.length > 0 && (
+        <Row className="mt-4">
+          <Col sm={12} className="d-flex justify-content-between">
+            <h3>Total Price:</h3>
+            <h3>${totalPrice.toFixed(2)}</h3> 
+          </Col>
+        </Row>
+      )}
     </div>
   );
 }

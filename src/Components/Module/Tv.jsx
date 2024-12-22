@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
 import { productDatas } from '../Data/Product1';
 import Headnav from './Headnav';

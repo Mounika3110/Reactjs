@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Sidenav from '../Sidenav';
 import { productDatas } from '../../Data/Product1';
 import { useParams } from 'react-router-dom';
@@ -10,7 +10,7 @@ import Topbar from './Topbar'
 function Tvdetails() {
   const [cart, setCart] = useState(0);
   const { id } = useParams();
-  const productData = productDatas.find((e) => e.id == id);
+  const productData = productDatas.find((e) => e.id=== Number(id));
 
   const { addToCart } = useCart(); 
 

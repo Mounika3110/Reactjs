@@ -1,21 +1,32 @@
-import React, { useState, } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidenav from '../Sidenav';
-import { product2Datas } from '../../Data/Product2';
 import { useParams } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import { useCart } from '../../Cart/Cartcontext';
-import Topbar from './Topbar'
+import Topbar from './Topbar';
 
 function Headdetails() {
-  const [cart, setCart] = useState(0);
+  const [productData, setProductData] = useState(null);
   const { id } = useParams();
-  const productData = product2Datas.find((e) => e.id == id);
-
   const { addToCart } = useCart(); 
+
+  useEffect(() => {
+    // Retrieve data from local storage
+    const retrievedData = localStorage.getItem('product2Datas');
+    if (retrievedData) {
+      const product2Datas = JSON.parse(retrievedData);
+      const foundProduct = product2Datas.find((e) => e.id === Number(id));
+            setProductData(foundProduct);
+    }
+  }, [id]);
+
+  if (!productData) {
+    return <div>Product not found or loading...</div>; 
+  }
 
   return (
     <div>
-      <Topbar/>
+      <Topbar />
       <Row>
         <Col sm={2}>
           <Sidenav />
@@ -33,14 +44,13 @@ function Headdetails() {
                 className='btn btn-outline-primary' 
                 onClick={() => {
                   addToCart(productData);
-                  setCart(cart + 1); 
                 }}
               >
                 Add to cart
               </button>
             </div>
             <div className='product'>
-              <img src={productData.image} style={{ width: "300px" }} alt="" />
+              <img src={productData.image} style={{ width: "300px" }} alt={productData.Model} />
             </div>
           </div>
         </Col>

@@ -451,3 +451,17 @@ export const product2Datas = [
         Price: 15000
     }
 ];
+// Assuming product2Datas is already defined as in your provided code
+
+// Convert the product2Datas array to a JSON string
+const product2DatasJSON = JSON.stringify(product2Datas);
+
+// Store the JSON string in local storage
+localStorage.setItem('product2Datas', product2DatasJSON);
+
+// To retrieve the data later, you can use:
+const retrievedData = localStorage.getItem('product2Datas');
+if (retrievedData) {
+    const product2DatasFromStorage = JSON.parse(retrievedData);
+    console.log(product2DatasFromStorage); // This will log the array back to the console
+}
