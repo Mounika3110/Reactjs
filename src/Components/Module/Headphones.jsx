@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
-import { product2Datas } from '../Data/Product2'; // Import your data
+import { product2Datas } from '../Data/Product2'; 
 import Sidenav from './Sidenav';
 import Phonenav from './Phonenav';
 import { Link } from 'react-router-dom';
 
 function Headphones() {
-  const [selectedBrand, setSelectedBrand] = useState('All'); // Initial state is 'All'
-
-  // Filter products based on selected brand
+  const [selectedBrand, setSelectedBrand] = useState('All'); 
   const filteredProducts = selectedBrand === 'All' 
     ? product2Datas 
     : product2Datas.filter((product) => product.brand === selectedBrand);
@@ -19,7 +17,7 @@ function Headphones() {
         <Sidenav />
       </Col>
       <Col sm={10}>
-        <Phonenav setSelectedBrand={setSelectedBrand} /> {/* Pass the setSelectedBrand function */}
+        <Phonenav setSelectedBrand={setSelectedBrand} /> 
         <div className='tv'>
           {filteredProducts.map((h) => (
             <Col key={h.id}> 
