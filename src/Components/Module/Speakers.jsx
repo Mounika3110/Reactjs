@@ -28,9 +28,10 @@ function Speakers() {
                     <Card.Title>{s.brand}</Card.Title>
                     <Card.Text>
                       <strong>Battery:</strong> {s.battery} <br />
+                      <strong>Brand:</strong> {s.brand} <br />
                       <strong>Weight:</strong> {s.weight} <br />
                       <strong>Model:</strong> {s.Model} <br />
-                      <strong>Price:</strong> ₹{s.Price}
+                      <strong>Price:</strong> {s.Price}
                     </Card.Text>
                   </Card.Body>
                 </Card>
