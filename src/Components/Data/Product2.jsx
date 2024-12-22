@@ -6,7 +6,6 @@ import Sony from '../../images/Sony2.jpeg'
 import realme from '../../images/realme.jpeg'
 import ZEBRONICS from '../../images/ZEBRONICS.jpeg'
 import Noise from '../../images/Noise.jpeg'
-import pTron from '../../images/pTron.jpeg'
 import Samsung from '../../images/Samsung.jpg'
 
 export const product2Datas = [

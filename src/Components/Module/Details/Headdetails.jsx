@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, } from 'react';
 import Sidenav from '../Sidenav';
 import { product2Datas } from '../../Data/Product2';
 import { useParams } from 'react-router-dom';
